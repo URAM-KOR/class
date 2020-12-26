@@ -1,5 +1,5 @@
 class FourCal:
-    def setdata(self, first, second):
+    def __init__(self, first, second):
         self.first = first
         self.second = second
     def add(self):
@@ -14,20 +14,25 @@ class FourCal:
     def div(self):
         result = self.first / self.second
         return result
-
-
-a = FourCal()
-b = FourCal()
-
-a.setdata(4,2)
-b.setdata(3,7)
+class MoreFourCal(FourCal):
+    def pow(self):
+        result = self.first ** self.second
+        return result
+a = FourCal(4,2)
+b = FourCal(3,7)
 
 print(a.add())
 print(a.mul())
 print(a.div())
 print(a.sub())
 
+a = MoreFourCal(4, 2)
+print(a.pow())
+
 print(b.add())
 print(b.mul())
 print(b.div())
 print(b.sub())
+
+b = MoreFourCal(3,7)
+print(b.pow())
